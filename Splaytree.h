@@ -1,6 +1,5 @@
-#ifndef TERMPROJECT_SPLAYTREE_H
-#define TERMPROJECT_SPLAYTREE_H
-
+#ifndef TERM_PROJECT_SPLAYTREE_H
+#define TERM_PROJECT_SPLAYTREE_H
 
 class Node{
 
@@ -14,23 +13,24 @@ class Node{
             left = nullptr;
             right = nullptr;
         }
+
 };
 
 
-class Splaytree{
+class Splaytree {
 
     private:
-        Node* root;
-
+        Node* root = nullptr;
 
     public:
         Splaytree();
         void insert(int data);
-    //    bool search(int data);
+        bool search(int data);
     //    void inOrder();
     //    void levelOrder();
+
 
 };
 
 
-#endif //TERMPROJECT_SPLAYTREE_H
+#endif //TERM_PROJECT_SPLAYTREE_H
