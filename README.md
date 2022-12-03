@@ -10,3 +10,20 @@ important function description in mind, there are many types of rotations that w
 zig-zig, zig-zag, and zag-zag. These types of rotation are implemented in this program and will be described in greater detail in this README.md file.
 
 # What is included in this repository
+The files included in this repository are as follows:
+- Splaytree.cpp
+- Splaytree.h
+- main.cpp
+
+The Splaytree.cpp file includes the definitions for each function and constructor associated with this algorithm. The Splaytree.h file is a header file that declares the node class and its functions. The main.cpp file is where each function (with their respective parameters) is called and executed.
+
+# Basic functions (not including splay functions)
+Any binary search tree includes their basic functions to serve their foundational purpose. These functions include the search, insert, and delete function.
+
+The search function is responsible for performing the search of a certain node/value in a binary search tree. The current node will start at the root node of the binary search tree and traverse down by going left or right depending on which the value of our node. For example, if the current node is the number 15 and we wanted to search for the number 9, then the search function would have to traverse left since 9 is less than 15. If the current node after the previous node holds the number 7, then the search function would have to traverse right since 9 is greater than 7. This process continues until the current node is equal to the value we are searching for.
+
+The insert function is responsible for inserting a new value and creating a new node for said value. To achieve this, the same process from the search function is performed again, where specific traversals are made based on the value of the current node and the value of the number being inserted. When enough traversals have occured to the point where a leaf is reached (a node with no children), then the function will create a new node to hold the inserted value and will either be created on the left side or the right side of the parent node depending on what the inserted number is.
+
+The delete function is responsible for deleting a certain node specified by the program. Once again, the same process is performed for traversing the binary search tree and when the certain node is reached, that node will be delared null and other nodes will be moved around to accomodate this deletion.
+
+Now that the basic functions of a binary search tree are explained, the functions mentioned previously that are unique to splay trees will be explained next.
