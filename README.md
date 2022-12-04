@@ -2,9 +2,9 @@
 Contributions by: Dominic Silva, Chris Lawler, Matthew Hayes, and Mubariz Saeed.
 
 # Overview
-The data structure implemented in this C++ program is called a splay tree. A splay tree is a self-balancing binary tree that rotates a certain direction depending on 
-what value we are searching for. This data structure is programmed with the basic functions of any binary tree (inserting, deleting, searching), but the main difference
-that distincts this binary tree from other types is the splaying function. This function searches for a certain value stored in a node by rotating the tree in a certain 
+The data structure implemented in this C++ program is called a splay tree. A splay tree is a self-balancing binary search tree that rotates a certain direction depending on 
+what value we are searching for. This data structure is programmed with the basic functions of any binary search tree (inserting, deleting, searching), but the main difference
+that distincts this binary search tree from other types is the splaying function. This function searches for a certain value stored in a node by rotating the tree in a certain 
 direction. In other words, setting each visited node as the root node and making the proper arrangements until the node we are searching for is the root node. With this
 important function description in mind, there are many types of rotations that will occur based on the location of the node in question. The rotation types are zig,
 zig-zig, zig-zag, and zag-zag. These types of rotation are implemented in this program and will be described in greater detail in this README.md file.
@@ -17,13 +17,26 @@ The files included in this repository are as follows:
 
 The Splaytree.cpp file includes the definitions for each function and constructor associated with this algorithm. The Splaytree.h file is a header file that declares the node class and its functions. The main.cpp file is where each function (with their respective parameters) is called and executed.
 
-# Basic functions (not including splay functions)
+# Basic functions 
 Any binary search tree includes their basic functions to serve their foundational purpose. These functions include the search, insert, and delete function.
 
-The search function is responsible for performing the search of a certain node/value in a binary search tree. The current node will start at the root node of the binary search tree and traverse down by going left or right depending on which the value of our node. For example, if the current node is the number 15 and we wanted to search for the number 9, then the search function would have to traverse left since 9 is less than 15. If the current node after the previous node holds the number 7, then the search function would have to traverse right since 9 is greater than 7. This process continues until the current node is equal to the value we are searching for.
+- The search function is responsible for performing the search of a certain node/value in a binary search tree. The current node will start at the root node of the binary search tree and traverse down by going left or right depending on which the value of our node. For example, if the current node is the number 15 and we wanted to search for the number 9, then the search function would have to traverse left since 9 is less than 15. If the current node after the previous node holds the number 7, then the search function would have to traverse right since 9 is greater than 7. This process continues until the current node is equal to the value we are searching for.
 
-The insert function is responsible for inserting a new value and creating a new node for said value. To achieve this, the same process from the search function is performed again, where specific traversals are made based on the value of the current node and the value of the number being inserted. When enough traversals have occured to the point where a leaf is reached (a node with no children), then the function will create a new node to hold the inserted value and will either be created on the left side or the right side of the parent node depending on what the inserted number is.
+- The insert function is responsible for inserting a new value and creating a new node for said value. To achieve this, the same process from the search function is performed again, where specific traversals are made based on the value of the current node and the value of the number being inserted. When enough traversals have occured to the point where a leaf is reached (a node with no children), then the function will create a new node to hold the inserted value and will either be created on the left side or the right side of the parent node depending on what the inserted number is.
 
-The delete function is responsible for deleting a certain node specified by the program. Once again, the same process is performed for traversing the binary search tree and when the certain node is reached, that node will be delared null and other nodes will be moved around to accomodate this deletion.
+- The delete function is responsible for deleting a certain node specified by the program. Once again, the same process is performed for traversing the binary search tree and when the certain node is reached, that node will be delared null and other nodes will be moved around to accomodate this deletion.
 
 Now that the basic functions of a binary search tree are explained, the functions mentioned previously that are unique to splay trees will be explained next.
+
+# Advanced functions
+What makes a splay tree distinct from other types of trees is the splay function and its different types stated previously. The four types of splaying will be described in this section of the README.
+
+- The zig function is responsible for rotating the tree to the right. If a user searches for a node that is a left child of the root node, then the tree will be rotated to the right from the root node so that the left child becomes the root node.
+
+- The zag function is responsible for rotating the tree to the left. If a user searches for a node that is a right child of the root node, then the tree will be rotated to the left from the root node so that the right child becomes the root node.
+
+- The zig zag function is responsible for creating a rotation to the right followed by a rotation to the left. If the user searches for a node that is the left child of the right child of a root node, then the tree will be rotated to to the right from the right child node and then rotated to the left from the root node so that the searched node becomes the root node.
+
+- The zag zig function is responsible for creating a rotation to the left followed by a rotation to the right. If the user searches for a node that is the right child of the left child of a root node, then the tree will be rotated to to the left from the left child node and then rotated to the right from the root node so that the searched node becomes the root node.
+
+
