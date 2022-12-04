@@ -39,4 +39,19 @@ What makes a splay tree distinct from other types of trees is the splay function
 
 - The zag zig function is responsible for creating a rotation to the left followed by a rotation to the right. If the user searches for a node that is the right child of the left child of a root node, then the tree will be rotated to to the left from the left child node and then rotated to the right from the root node so that the searched node becomes the root node.
 
+- The zig zig function is responsible for performing a zig followed by another zig (two right rotations). This function exists because there might be a time when the node that is being searches has a parent as well as a grandparent. This function exists to accomodate this scenario.
 
+- The zag zag function is responsible for performing a zag followed by another zag (two left rotations). This function exists because there might be a time when the node that is being searches has a parent as well as a grandparent. This function exists to accomodate this scenario.
+
+# Pros and Cons
+
+Pros:
+- Unlike other binary search trees (AVL trees, Red-Black trees), extra information is not stored in memory which makes the algorithm more efficient.
+- More frequently-accessed nodes will be closer to the root node, meaning that the time to access these resources will be quick. Think of it as a type of cache.
+
+Cons:
+- The time complexity for roughly balanced trees would be linear O(n).
+
+# Special Thanks
+This splay tree data structure and GitHub repository was developed by Dominic Silva, Chris Lawler, Matt Hayes, and Mubariz Saeed. A thank you would like to be given
+to the professor and teaching assistants of the CSC 212: Data Structures and Algorithms course at the University of Rhode Island for professing us about time complexity, stacks/queues, iteration/recursion, sorting algorithms, binary search trees, and more. We hope you enjoy using this program!
