@@ -13,7 +13,7 @@ void Splaytree::insert(int data) {
 
     if(root == nullptr){
         root = new Node(data, nullptr);
-        return;
+        return; 
     }
 
     Node* current = root;
