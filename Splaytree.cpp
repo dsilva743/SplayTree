@@ -6,6 +6,7 @@
 Splaytree::Splaytree() {
     root = nullptr;
 }
+   
 
 //Insert number in the tree
 void Splaytree::insert(int data) {
