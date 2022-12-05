@@ -51,6 +51,7 @@ Pros:
 
 Cons:
 - The time complexity for roughly balanced trees would be linear O(n).
+- Like other binary search trees, splay trees can not have duplicate values.
 
 # Compilation and Execution
 The program will be compiled using this command line:
