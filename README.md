@@ -53,15 +53,18 @@ Cons:
 - The time complexity for roughly balanced trees would be linear O(n).
 - Like other binary search trees, splay trees can not have duplicate values.
 
-# Compilation and Execution
-The program will be compiled using this command line:
+# Compilation, Execution, and Visualization
+This program will be compiled using this command line:
 ```
 g++ -std=c++11 main.cpp Splaytree.cpp -o splay
 ```
-The program will be executed using this command line:
+
+This program will be executed using this command line:
 ```
 ./splay
 ```
+
+This program can be visualized using [this website](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0A%20%20l1%20-%3E%20l2%3B%0A%20%20l2%20-%3E%20l3%3B%0A%0A%7D).
 
 # Special Thanks
 This splay tree data structure and GitHub repository was developed by Dominic Silva, Chris Lawler, Matt Hayes, and Mubariz Saeed. A thank you would like to be given
