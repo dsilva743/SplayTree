@@ -56,7 +56,7 @@ Cons:
 # Compilation and Execution
 The program will be compiled using this command line:
 ```
-g++ std=c++11 main.cpp Splaytree.cpp -o splay
+g++ -std=c++11 main.cpp Splaytree.cpp -o splay
 ```
 The program will be executed using this command line:
 ```
