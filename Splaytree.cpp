@@ -76,7 +76,7 @@ void Splaytree::bringToTop(Node* x) {
         root = x;
         return;
     }
-
+ 
     Node* g = p -> parent;
 
     //to do a zig action, the x must be the left child and the p is the root
