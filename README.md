@@ -52,6 +52,16 @@ Pros:
 Cons:
 - The time complexity for roughly balanced trees would be linear O(n).
 
+# Compilation and Execution
+The program will be compiled using this command line:
+```
+g++ std=c++11 main.cpp Splaytree.cpp -o splay
+```
+The program will be executed using this command line:
+```
+./splay
+```
+
 # Special Thanks
 This splay tree data structure and GitHub repository was developed by Dominic Silva, Chris Lawler, Matt Hayes, and Mubariz Saeed. A thank you would like to be given
 to the professor and teaching assistants of the CSC 212: Data Structures and Algorithms course at the University of Rhode Island for professing us about time complexity, stacks/queues, iteration/recursion, sorting algorithms, binary search trees, and more. We hope you enjoy using this program!
