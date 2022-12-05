@@ -72,6 +72,8 @@ class Splaytree {
 
     public:
         Splaytree();
+        ~Splaytree();
+        void clear(Node* curr);
         void insert(int data);
         bool search(int data);
         void inOrder();
