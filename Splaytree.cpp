@@ -2,10 +2,12 @@
 #include <queue>
 #include "Splaytree.h"
 
+//Constructor
 Splaytree::Splaytree() {
     root = nullptr;
 }
 
+//Insert number in the tree
 void Splaytree::insert(int data) {
 
     if(root == nullptr){
@@ -41,7 +43,7 @@ void Splaytree::insert(int data) {
     }
 }
 
-
+//Search for number in the tree
 bool Splaytree::search(int data) {
 
     Node* current = root;
@@ -64,6 +66,7 @@ bool Splaytree::search(int data) {
     return false;
 }
 
+//Bring searched numnber to become the root node
 void Splaytree::bringToTop(Node* x) {
 
     Node* p = x -> parent;
@@ -205,11 +208,13 @@ void Splaytree::zagZag(Node *x, Node *p, Node *g) {
     }
 }
 
+
 void Splaytree::inOrder() {
     inOrder(root);
     std::cout << std::endl;
 
 }
+
 
 void Splaytree::inOrder(Node* curr){
     if(curr == nullptr){
@@ -221,6 +226,7 @@ void Splaytree::inOrder(Node* curr){
         inOrder(curr -> right);
     }
 }
+
 
 void Splaytree::levelOrder() {
     
@@ -260,11 +266,13 @@ void Splaytree::levelOrder() {
     std::cout << std::endl;
 }
 
+//Deconstructor
 Splaytree::~Splaytree() {
     clear(root);
     root = nullptr;
 }
 
+//Deleting nodes
 void Splaytree::clear(Node *curr) {
 
     if(curr == nullptr){
