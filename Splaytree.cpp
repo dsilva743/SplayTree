@@ -20,7 +20,7 @@ void Splaytree::insert(int data) {
         if(data < current -> data) {
             if (current->left == nullptr) {
                 current->left = new Node(data, current);
-//                bringToTop(current -> left);
+                //bringToTop(current -> left);
                 return;
             }
             else {
@@ -31,7 +31,7 @@ void Splaytree::insert(int data) {
         if(data > current -> data) {
             if (current->right == nullptr) {
                 current->right = new Node(data, current);
-//                bringToTop(current -> right);
+                //bringToTop(current -> right);
                 return;
             }
             else {
@@ -108,7 +108,7 @@ void Splaytree::bringToTop(Node* x) {
 
 //Zig rotation (Right rotation)
 void Splaytree::zig(Node* x, Node* p, Node* g){
-    std::cout << "zig" << std::endl;
+
     Node* child = x -> right;
     x -> setRightChild(p);
     x -> parent = nullptr;
@@ -118,7 +118,7 @@ void Splaytree::zig(Node* x, Node* p, Node* g){
 
 //Zag rotation (Left rotation)
 void Splaytree::zag(Node* x, Node* p, Node* g){
-    std::cout << "zag " << x -> data << " " << p -> data << std::endl;
+
     Node* child = x -> left;
     x -> setLeftChild(p);
     x -> parent = nullptr;
@@ -127,7 +127,7 @@ void Splaytree::zag(Node* x, Node* p, Node* g){
 
 //Zig-zag (Zig followed by zag)
 void Splaytree::zigZag(Node *x, Node *p, Node *g) {
-    std::cout << "zig zag" << std::endl;
+
     Node* top = g -> parent;
     bool leftOfTop = g -> isLeftChild();
 
@@ -148,7 +148,7 @@ void Splaytree::zigZag(Node *x, Node *p, Node *g) {
 
 //Zag-zig (Zag followed by zig)
 void Splaytree::zagZig(Node *x, Node *p, Node *g) {
-   std::cout << "zag zig" << std::endl;
+
     Node* top = g -> parent;
     bool leftOfTop = g -> isLeftChild();
 
@@ -170,7 +170,7 @@ void Splaytree::zagZig(Node *x, Node *p, Node *g) {
 
 //Zig-zig (two right rotations)
 void Splaytree::zigZig(Node *x, Node *p, Node *g) {
-    std::cout << " zig zig" << std::endl;
+
     Node* top = g -> parent;
     bool leftOfTop = g -> isLeftChild();
     zig(p,g,nullptr);
@@ -189,7 +189,7 @@ void Splaytree::zigZig(Node *x, Node *p, Node *g) {
 
 //Zag-zag (two left rotations)
 void Splaytree::zagZag(Node *x, Node *p, Node *g) {
-    std::cout << " zag zag" << std::endl;
+
     Node* top = g -> parent;
     bool leftOfTop = g -> isLeftChild();
     zag(p,g,nullptr);
@@ -210,6 +210,7 @@ void Splaytree::inOrder() {
     std::cout << std::endl;
 
 }
+
 void Splaytree::inOrder(Node* curr){
     if(curr == nullptr){
         return;
@@ -222,26 +223,56 @@ void Splaytree::inOrder(Node* curr){
 }
 
 void Splaytree::levelOrder() {
+    
     std::queue<Node*> q;
+    std::queue<int> levels;
+    
+    int currLevel = 0;
+    
+    levels.push(0);
     q.push(root);
 
     while(!q.empty()){
         Node* curr = q.front();
+        
+        int level = levels.front();
+        
+        levels.pop();
         q.pop();
+
+        if(level != currLevel){
+            currLevel = level;
+            std::cout << std::endl;
+        }
+
         std::cout << curr -> data << " ";
 
         if(curr -> left != nullptr){
             q.push(curr -> left);
+            levels.push(currLevel + 1);
         }
 
         if(curr -> right != nullptr){
             q.push(curr -> right);
+            levels.push(currLevel + 1);
         }
     }
     std::cout << std::endl;
 }
 
+Splaytree::~Splaytree() {
+    clear(root);
+    root = nullptr;
+}
 
+void Splaytree::clear(Node *curr) {
 
+    if(curr == nullptr){
+        return;
+    }
 
+    clear(curr -> left);
+    clear(curr -> right);
+    delete curr;
 
+}
