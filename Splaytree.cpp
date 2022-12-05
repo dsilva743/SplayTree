@@ -8,7 +8,7 @@ Splaytree::Splaytree() {
 }
     
 
-//Insert number in the tree
+//Insert number in the tree 
 void Splaytree::insert(int data) {
 
     if(root == nullptr){
