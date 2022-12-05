@@ -147,6 +147,7 @@ void Splaytree::zigZag(Node *x, Node *p, Node *g) {
             top ->setRightChild(x);
         }
     }
+     
 }
 
 //Zag-zig (Zag followed by zig)
