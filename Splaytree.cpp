@@ -284,3 +284,4 @@ void Splaytree::clear(Node *curr) {
     delete curr;
 
 }
+ 
