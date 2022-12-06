@@ -65,7 +65,13 @@ int main(int argc, char *argv[]){
             int num;
             std::cin >> num;
             bool results = tree.search(num);
-            std::cout << "Result: " << results << std::endl;
+            
+            if(results){
+            std::cout << "True" << std::endl;
+            }
+            else{
+                std::cout << "False, No number exists" << std::endl;
+            }
 
 
         }
