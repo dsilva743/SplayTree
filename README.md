@@ -14,6 +14,8 @@ The files included in this repository are as follows:
 - Splaytree.cpp
 - Splaytree.h
 - main.cpp
+- dataset1.txt
+- dataset2.txt
 
 The Splaytree.cpp file includes the definitions for each function and constructor associated with this algorithm. The Splaytree.h file is a header file that declares the node class and its functions. The main.cpp file is where each function (with their respective parameters) is called and executed.
 
@@ -25,6 +27,33 @@ Any binary search tree includes their basic functions to serve their foundationa
 - The insert function is responsible for inserting a new value and creating a new node for said value. To achieve this, the same process from the search function is performed again, where specific traversals are made based on the value of the current node and the value of the number being inserted. When enough traversals have occured to the point where a leaf is reached (a node with no children), then the function will create a new node to hold the inserted value and will either be created on the left side or the right side of the parent node depending on what the inserted number is.
 
 - The delete function is responsible for deleting a certain node specified by the program. Once again, the same process is performed for traversing the binary search tree and when the certain node is reached, that node will be delared null and other nodes will be moved around to accomodate this deletion.
+
+- The bringToTop function brings the number that we are looking for to the root of the splay tree.
+
+- The levelOrder function outputs the integers by what level they are on in terms of the splay tree.
+
+- The inOrder function prints out the levelOrder function.
+
+- The clear function recursively helps the deconstructor remove the children, parents, and grandparents of the splay tree.
+
+# The Menu Function
+The menu function outputs to the user options based on what they want to do with the splay tree. The menu outputs five options:
+- 1. Insert Number
+- 2. Search for number
+- 3. Print level order
+- 4. Read numbers from file
+- 5. Quit
+
+If option one is selected, the user can insert a number of their choice into the splay tree. 
+
+If option two is selected, the user can search for a number of their choice and the program will output true if it exits, or false if it does not. 
+
+If option three is selected, the program outputs the current values and nodes the splay tree contains. 
+
+If option four is selected, the program will insert a series of numbers from a created text file.
+> Note: In your command line, you must include your .txt file containing all numbers to be inserted.
+
+If option five is selected, the program will be terminated and a "Goodbye!" message will be displayed.
 
 Now that the basic functions of a binary search tree are explained, the functions mentioned previously that are unique to splay trees will be explained next.
 
@@ -61,7 +90,7 @@ g++ -std=c++11 main.cpp Splaytree.cpp -o splay
 
 This program will be executed using this command line:
 ```
-./splay
+./splay example.txt
 ```
 
 This program can be visualized using [this website](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0A%20%20l1%20-%3E%20l2%3B%0A%20%20l2%20-%3E%20l3%3B%0A%0A%7D).
