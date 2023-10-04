@@ -1,5 +1,4 @@
 # Splay tree data structure implemented in C++
-Contributions by: Dominic Silva, Chris Lawler, Matthew Hayes, and Mubariz Saeed.
 
 # Overview
 The data structure implemented in this C++ program is called a splay tree. A splay tree is a self-balancing binary search tree that rotates a certain direction depending on 
@@ -95,6 +94,3 @@ This program will be executed using this command line:
 
 This program can be visualized using [this website](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%0A%20%20l1%20-%3E%20l2%3B%0A%20%20l2%20-%3E%20l3%3B%0A%0A%7D).
 
-# Special Thanks
-This splay tree data structure and GitHub repository was developed by Dominic Silva, Chris Lawler, Matt Hayes, and Mubariz Saeed. A thank you would like to be given
-to the professor and teaching assistants of the CSC 212: Data Structures and Algorithms course at the University of Rhode Island for professing us about time complexity, stacks/queues, iteration/recursion, sorting algorithms, binary search trees, and more. We hope you enjoy using this program!
